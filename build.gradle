@@ -34,10 +34,10 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	implementation "org.jetbrains:annotations:${project.jetbrains_annotations_version}"
-	implementation "net.luckperms:api:${project.luckperms_version}"
-	implementation "net.kyori:adventure-text-minimessage:${project.kyori_adventure_version}"
-	implementation "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_version}"
+	compile "org.jetbrains:annotations:${project.jetbrains_annotations_version}"
+	compile "net.luckperms:api:${project.luckperms_version}"
+	compile "net.kyori:adventure-text-minimessage:${project.kyori_adventure_version}"
+	compile "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_version}"
 }
 
 // Tasks
