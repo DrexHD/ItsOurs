@@ -20,10 +20,15 @@ configurations {
 }
 
 repositories {
-    maven {
-        name = 'sonatype-oss'
-        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+	maven { url 'http://server.bbkr.space:8081/artifactory/libs-release' }
+	maven { url 'https://repo.spongepowered.org/maven' }
+	maven {
+		name = 'sonatype-oss'
+		url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+	}
+	maven { url 'https://raw.githubusercontent.com/Devan-Kerman/Devan-Repo/master/' }
 }
 
 dependencies {
@@ -36,8 +41,14 @@ dependencies {
 
 	implementation "org.jetbrains:annotations:${project.jetbrains_annotations_version}"
 	implementation "net.luckperms:api:${project.luckperms_version}"
-	implementation "net.kyori:adventure-text-minimessage:${project.kyori_adventure_version}"
-	implementation "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_version}"
+
+	compile "net.kyori:adventure-text-minimessage:${project.kyori_adventure_minimessage_version}"
+	shadow "net.kyori:adventure-text-minimessage:${project.kyori_adventure_minimessage_version}"
+	include "net.kyori:adventure-text-minimessage:${project.kyori_adventure_minimessage_version}"
+
+	compile "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_serializer_version}"
+	shadow "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_serializer_version}"
+	include "net.kyori:adventure-text-serializer-gson:${project.kyori_adventure_serializer_version}"
 }
 
 // Tasks

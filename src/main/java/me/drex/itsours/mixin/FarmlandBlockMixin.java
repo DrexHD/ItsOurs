@@ -22,7 +22,7 @@ import java.util.Optional;
 public abstract class FarmlandBlockMixin {
 
     @Inject(method = "onLandedUpon", at = @At(value = "HEAD"), cancellable = true)
-    private void dontYouDareFarmMe(World world, BlockPos pos, Entity entity, float distance, CallbackInfo ci) {
+    private void dontYouDareFarmMe(World world, BlockPos pos, Entity entity, CallbackInfo ci) {
         Optional<AbstractClaim> claim = ItsOursMod.INSTANCE.getClaimList().get((ServerWorld) world, pos);
         if (claim.isPresent() && entity instanceof ServerPlayerEntity && !claim.get().hasPermission(entity.getUuid(), "mine.farmland")) {
             ClaimPlayer claimPlayer = (ClaimPlayer) entity;
