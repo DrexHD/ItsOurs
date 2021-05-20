@@ -10,7 +10,6 @@
     "BucketItemMixin",
     "EntityMixin",
     "ExplosionMixin",
-    "FarmlandBlockMixin",
     "FluidMixin",
     "LecternScreenHandlerMixin",
     "LevelStorageSessionMixin",

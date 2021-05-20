@@ -180,7 +180,7 @@ public abstract class AbstractClaim {
             if (cachedFlying && !player.getAbilities().flying) {
                 BlockPos pos = getPosOnGround(player.getBlockPos(), player.getServerWorld());
                 if (pos.getY() + 3 < player.getY()) {
-                    player.teleport((ServerWorld) player.world, player.getX(), pos.getY(), player.getZ(), player.yaw, player.pitch);
+                    player.teleport((ServerWorld) player.world, player.getX(), pos.getY(), player.getZ(), player.headYaw, player.prevPitch);
                 }
             }
             player.sendAbilitiesUpdate();
